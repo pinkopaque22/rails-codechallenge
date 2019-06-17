@@ -33,7 +33,7 @@ COPY Gemfile .
 COPY Gemfile.lock .
 RUN bundle install
 
-ARG INSTALL_PATH=/opt/spinweb
+ARG INSTALL_PATH=/opt/railscodechallenge
 ENV INSTALL_PATH $INSTALL_PATH
 WORKDIR $INSTALL_PATH
 COPY . .

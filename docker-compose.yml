@@ -28,6 +28,7 @@ services:
       - db
     links:
       - db
+    environment: *default-environment
     ports: ['5000:5000']
     command: >
       bash -c "
