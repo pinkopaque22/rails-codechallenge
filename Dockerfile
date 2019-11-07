@@ -1,4 +1,4 @@
-FROM ruby:2.6.1-slim
+FROM ruby:2.6.5-slim
 
 RUN apt-get update && apt-get install -y curl gnupg
 RUN echo "deb http://apt.thoughtbot.com/debian/ stable main" | tee /etc/apt/sources.list.d/thoughtbot.list
