@@ -4,13 +4,11 @@ Since Spin relies on geographical features of PostgresQL, your challenge will be
 
 ## Setup and requirements
 
-Create a Github repository and invite `jsierles` to it. We'll fork this repo into our org so we can review.
+Create a Github repository and invite `dirkdk` to it. We'll fork this repo into our org so we can review.
 
 Push code regularly with meaningful commit messages.
 
-Setup a PostgreSQL instance with the PostGIS extension for testing locally.
-
-Do not add an authentication layer to this service.
+No authentication layer is needed
 
 Tests are required, though not at 100% coverage.
 
@@ -22,19 +20,18 @@ You must use PostGIS functions somewhere in your code. Don't rely only on Ruby g
 
 You have a fleet of 50 scooters in San Francisco. Your goal is to construct REST API endpoints and responses for these clients.
 
-### A scooter reporting its current location and battery life
+1. Scooter with IoT capabilities reporting its current location and battery life
 
 Vehicles will report their lat/long and battery level, every 5 seconds, during a trip.
 
-### A mobile app used by our operations team
+2. Mobile app used by our operations team
 
 This app should be able to:
 
 * Open a maintenance ticket
 * Mark a scooter as inactive and being picked up for maintenance
-* Request that a batch of scooters be unlocked all at once
 
-### A mobile app used by customers
+3. Mobile app used by customers
 
 This app should be able to show where active scooters are on a map within a given radius from the user's current lat/long location.
 
@@ -42,22 +39,14 @@ Active scooters are defined as those having >= 30% battery life and not picked u
 
 Bonus points: Scooters should only be visible during the 9am - 5pm riding window in the US Pacific time zone.
 
-### City governments requesting a historical data feed
-
-This feed should confirm to a JSON schema spec.
-
-The feed should any state transition through which the scooter has run, such as:
-
-* battery life being updated
-* location being updated
-* maintenance state changes
 
 ## Things we'll ask you about in code review
 
 * How would you design this data model to efficiently handle historical data queries when that table reaches 100M records?
 * Where are there be caching opportunities?
+* what are ways to support multiple types of vehicles, e.g. ebikes or go cars
 
-# Setup
+# Setup via Docker
 
 I you don't want to setup services locally, you can use the enclosed `docker-compose.yml` to get started.
 
