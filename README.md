@@ -35,11 +35,12 @@ Active scooters are defined as those having >= 30% battery life and not picked u
 Bonus points: Scooters should only be visible during the 9am - 5pm riding window in the US Pacific time zone.
 
 
-## Things we'll ask you about in code review
+## Things we'll ask you about in the code review once you come onsite
 
 * How would you design this data model to efficiently handle historical data queries when that table reaches 100M records?
 * Where are there be caching opportunities?
-* what are ways to support multiple types of vehicles, e.g. ebikes or go cars
+* What are ways to support multiple types of vehicles, e.g. ebikes or go cars
+* How do you guarantee the correct state of a vehicle?
 
 # Setup via Docker
 
